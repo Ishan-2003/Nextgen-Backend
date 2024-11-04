@@ -17,6 +17,7 @@ const PORT = process.env.PORT;
 const morgan = require("morgan");
 
 dbConnect();
+console.log('connected')
 app.get("/",(req,res)=>{res.send("running on and on and on...");});
 app.use(cors());
 app.use(morgan("dev"));
