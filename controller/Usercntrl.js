@@ -13,7 +13,7 @@ const crypto = require('crypto');
 const createUser = asynchandler(async (req, res) => {
     const email = req.body.email;
     const finduser = await User.findOne({ email });
-
+    console.log(email);
     if (!finduser) {
         // console.log('success')
         //createUser
