@@ -1,5 +1,5 @@
 const express = require('express')
-const dbConnect = require("./config/dbConnect")
+const dbConnect = require("./dbConnect")
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();

@@ -1,10 +1,10 @@
-const { gen_token } = require("../config/jwtToken");
+const { gen_token } = require("../jwtToken");
 const User = require("../models/Usermodel");
 const Cart = require('../models/CartModel');
 const Order = require('../models/OrderModel');
 const asynchandler = require("express-async-handler");
 const validate_mongodb_id = require("../utils/validate_MongoDBid");
-const { gen_refresh_token } = require("../config/refreshtoken");
+const { gen_refresh_token } = require("../refreshtoken");
 const jwt = require('jsonwebtoken');
 const { send_Email } = require("./Emailcntrl");
 const { resolveObjectURL } = require("buffer");
