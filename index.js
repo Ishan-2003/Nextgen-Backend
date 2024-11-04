@@ -3,7 +3,7 @@ const dbConnect = require("./dbConnect")
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-// const authRouter = require("./routes/Authroute");
+const authRouter = require("./routes/Authroute");
 const cookieparser = require('cookie-parser');
 const { notFound, errorHandler } = require("./middlewares/ErrorHandler");
 // const productrouter = require('./routes/Productroute');
@@ -23,7 +23,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieparser());
-// app.use("/api/User",authRouter);
+app.use("/api/User",authRouter);
 // app.use("/api/Product",productrouter);
 // app.use("/api/Blog",blogrouter);
 // app.use("/api/Category",prodcategoryrouter);
