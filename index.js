@@ -25,7 +25,7 @@ app.use("/api/Blog",blogrouter);
 app.use("/api/Category",prodcategoryrouter);
 app.use("/api/Color",colorrouter);
 app.use("/api/Brand",brandrouter);
-app.use("/api/BlogCategory",blogcategoryrouter);
+// app.use("/api/BlogCategory",blogcategoryrouter);
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
