@@ -19,11 +19,11 @@ const morgan = require("morgan");
 dbConnect();
 app.get("/",(req,res)=>{res.send("running on and on and on...");});
 app.use(cors());
+app.use("/api/User",authRouter);
 // app.use(morgan("dev"));
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
 // app.use(cookieparser());
-app.use("/api/User",authRouter);
 // app.use("/api/Product",productrouter);
 // app.use("/api/Blog",blogrouter);
 // app.use("/api/Category",prodcategoryrouter);
@@ -31,8 +31,8 @@ app.use("/api/User",authRouter);
 // app.use("/api/Brand",brandrouter);
 // app.use("/api/Color",colorrouter);
 
-app.use(notFound);
-app.use(errorHandler);
+// app.use(notFound);
+// app.use(errorHandler);
 
 
 app.listen(PORT,()=>{
