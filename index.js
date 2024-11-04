@@ -18,7 +18,7 @@ const PORT = process.env.PORT;
 const morgan = require("morgan");
 
 dbConnect();
-app.get("/",(req,res)=>{res.send("running on and on and on...");});
+app.get("/api",(req,res)=>{res.send("running on and on and on...");});
 app.use("/api/User",authRouter);
 // app.use(morgan("dev"));
 // app.use(bodyParser.json());
