@@ -4,6 +4,7 @@ const { is_Admin, authmiddleware } = require('../middlewares/Authmiddleware');
 
 const router = express.Router();
 
+router.get("/",(req,res)=>{res.send('authroute')})
 router.post("/register", createUser);
 router.post("/fogot-password-token", fogotPasswordToken)
 router.put("/reset_password/:token", reset_Password)
