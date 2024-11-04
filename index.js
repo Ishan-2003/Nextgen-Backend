@@ -11,7 +11,7 @@ const blogrouter = require('./routes/Blogroute');
 const prodcategoryrouter = require('./routes/ProdCategoryroute');
 const colorrouter = require('./routes/Colorroute');
 const brandrouter = require('./routes/Brandroute');
-const blogcategoryrouter = require('./routes/BlogCategoryroute');
+// const blogcategoryrouter = require('./routes/BlogCategoryroute');
 require('dotenv').config();
 const PORT = process.env.PORT;
 const morgan = require("morgan");
