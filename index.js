@@ -1,10 +1,8 @@
+const express = require('express')
 const dbConnect = require("./config/dbConnect")
 const bodyParser = require('body-parser');
-const express = require('express')
 const cors = require('cors');
-const dotenv = require('dotenv');
 const app = express();
-const PORT = process.env.PORT || 5001;
 const authRouter = require("./routes/Authroute");
 const cookieparser = require('cookie-parser');
 const { notFound, errorHandler } = require("./middlewares/ErrorHandler");
@@ -15,8 +13,9 @@ const blogcategoryrouter = require('./routes/BlogCategoryroute');
 const brandrouter = require('./routes/Brandroute');
 const colorrouter = require('./routes/Colorroute');
 const morgan = require("morgan");
+require('dotenv').config();
+const PORT = process.env.PORT;
 
-dotenv.config();
 dbConnect();
 app.get("/",(req,res)=>{res.send("running on and on and on...");});
 app.use(cors());
