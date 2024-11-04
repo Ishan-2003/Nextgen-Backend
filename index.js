@@ -6,7 +6,6 @@ const app = express();
 const authRouter = require("./routes/Authroute");
 const cookieparser = require('cookie-parser');
 const { notFound, errorHandler } = require("./middlewares/ErrorHandler");
-app.use(cors());
 // const productrouter = require('./routes/Productroute');
 // const blogrouter = require('./routes/Blogroute');
 // const prodcategoryrouter = require('./routes/ProdCategoryroute');
@@ -19,6 +18,7 @@ const morgan = require("morgan");
 
 dbConnect();
 app.get("/api",(req,res)=>{res.send("running on and on and on...");});
+app.use(cors());
 app.use("/api/User",authRouter);
 // app.use(morgan("dev"));
 // app.use(bodyParser.json());
@@ -31,8 +31,8 @@ app.use("/api/User",authRouter);
 // app.use("/api/Brand",brandrouter);
 // app.use("/api/Color",colorrouter);
 
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 
 app.listen(PORT,()=>{
